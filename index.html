@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalo Sorpresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fce4ec;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+        h1 {
+            color: #d81b60;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            animation: bounce 1.5s infinite;
+        }
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            margin: 50px auto;
+            background-color: #ff6b6b;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: shake 1.5s infinite;
+        }
+        .gift-box img {
+            width: 120px;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .kuromi {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 120px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎄 Tu regalo de Navidad 🎄</h1>
+    <p>Haz clic en el regalo para abrirlo...</p>
+    <div class="gift-box" onclick="showMessage()">
+        <img src="https://i.imgur.com/JQXhRvm.png" alt="Regalo">
+    </div>
+    <div class="message" id="message">
+        <p>¡Sorpresa! 🎉</p>
+        <p>Hola, programador favorito ❤️</p>
+        <p>Eres el mejor regalo que la vida me dio. ¡Feliz Navidad! 🎁</p>
+        <p>PD: Este regalo está hecho con amor (y un poquito de código) 😉</p>
+    </div>
+    <img class="kuromi" src="https://i.imgur.com/JRbFcXw.gif" alt="Kuromi con gorrito de Navidad">
+    <script>
+        function showMessage() {
+            const giftBox = document.querySelector('.gift-box');
+            const message = document.getElementById('message');
+
+            giftBox.style.display = 'none'; // Oculta la caja de regalo
+            message.style.display = 'block'; // Muestra el mensaje
+        }
+    </script>
+</body>
+</html>
